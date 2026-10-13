@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rutas – RutaU</title>
+<meta name="description" content="Rutas del transporte universitario, sus paradas y la posición del autobús.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<header class="encabezado">
+  <div class="encabezado-fila">
+    <a class="marca" href="dashboard.html"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 11h18M7 20v-3M17 20v-3"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg><span>RutaU</span></a>
+    <div class="herramientas" role="group" aria-label="Opciones de accesibilidad">
+      <button type="button" class="btn-herr" id="btn-texto" aria-pressed="false">Texto grande</button>
+      <button type="button" class="btn-herr" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Principal">
+    <ul>
+      <li><a href="dashboard.html">Panel</a></li>
+      <li><a href="rutas.html" aria-current="page">Rutas</a></li>
+      <li><a href="reportar.html">Reportar</a></li>
+      <li><a href="mis-reportes.html">Mis reportes</a></li>
+      <li><button type="button" data-salir>Cerrar sesión</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="principal" tabindex="-1">
+  <div id="vista-lista" hidden>
+    <h1>Rutas</h1>
+    <p class="intro">Elige una ruta para ver sus paradas y dónde va el autobús.</p>
+    <ul class="rutas-lista" id="lista-rutas"><li class="ayuda">Cargando…</li></ul>
+  </div>
+
+  <div id="vista-detalle" hidden>
+    <p><a class="volver" href="rutas.html">Volver a rutas</a></p>
+    <h1 id="titulo-ruta" tabindex="-1">Ruta</h1>
+    <p class="tarjeta" id="aviso" hidden></p>
+    <div class="estado-bus" id="estado-bus"></div>
+    <h2>Paradas</h2>
+    <p class="ayuda">Pulsa «Guardar» junto a una parada para tenerla en tus favoritas.</p>
+    <ol class="paradas" id="paradas" aria-label="Paradas de la ruta"></ol>
+  </div>
+</main>
+
+<footer class="pie"><p>RutaU es un prototipo académico de Interacción Humano-Computadora. Los horarios son simulados.</p></footer>
+
+<script src="js/a11y.js" defer></script>
+<script src="js/api.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/rutas.js" defer></script>
+</body>
+</html>

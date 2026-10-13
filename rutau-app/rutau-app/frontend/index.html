@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iniciar sesión – RutaU</title>
+<meta name="description" content="Inicia sesión o crea una cuenta para consultar el transporte universitario.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<header class="encabezado">
+  <div class="encabezado-fila">
+    <a class="marca" href="index.html"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 11h18M7 20v-3M17 20v-3"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg><span>RutaU</span></a>
+    <div class="herramientas" role="group" aria-label="Opciones de accesibilidad">
+      <button type="button" class="btn-herr" id="btn-texto" aria-pressed="false">Texto grande</button>
+      <button type="button" class="btn-herr" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+</header>
+
+<main id="principal" tabindex="-1">
+  <h1>Tu autobús universitario, sin adivinar</h1>
+  <p class="intro">Inicia sesión o crea una cuenta para ver cuánto falta para tu autobús, guardar tus paradas y reportar problemas.</p>
+  <p class="tarjeta" id="aviso-sesion" role="status" hidden></p>
+
+  <div class="dos-col">
+    <section class="tarjeta" aria-labelledby="t-login">
+      <h2 id="t-login">Iniciar sesión</h2>
+      <form id="form-login" novalidate>
+        <div class="resumen-errores" id="resumen-login" role="alert" tabindex="-1" hidden></div>
+        <div class="campo">
+          <label for="login-correo">Correo electrónico</label>
+          <input type="email" id="login-correo" name="correo" autocomplete="email" required aria-required="true" aria-describedby="login-correo-error">
+          <p class="error" id="login-correo-error" data-error-for="correo" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="login-clave">Contraseña</label>
+          <input type="password" id="login-clave" name="clave" autocomplete="current-password" required aria-required="true" aria-describedby="login-clave-error">
+          <p class="error" id="login-clave-error" data-error-for="clave" hidden></p>
+        </div>
+        <button type="submit" class="btn primario">Iniciar sesión</button>
+      </form>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="t-registro">
+      <h2 id="t-registro">Crear cuenta</h2>
+      <form id="form-registro" novalidate>
+        <div class="resumen-errores" id="resumen-registro" role="alert" tabindex="-1" hidden></div>
+        <div class="campo">
+          <label for="reg-nombre">Nombre completo</label>
+          <input type="text" id="reg-nombre" name="nombre" autocomplete="name" required aria-required="true" aria-describedby="reg-nombre-error">
+          <p class="error" id="reg-nombre-error" data-error-for="nombre" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="reg-correo">Correo electrónico</label>
+          <input type="email" id="reg-correo" name="correo" autocomplete="email" required aria-required="true" aria-describedby="reg-correo-error">
+          <p class="error" id="reg-correo-error" data-error-for="correo" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="reg-clave">Contraseña</label>
+          <input type="password" id="reg-clave" name="clave" autocomplete="new-password" required aria-required="true" aria-describedby="reg-clave-ayuda reg-clave-error">
+          <p class="ayuda" id="reg-clave-ayuda">Mínimo 8 caracteres, con letras y números.</p>
+          <p class="error" id="reg-clave-error" data-error-for="clave" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="reg-clave2">Repite la contraseña</label>
+          <input type="password" id="reg-clave2" name="clave2" autocomplete="new-password" required aria-required="true" aria-describedby="reg-clave2-error">
+          <p class="error" id="reg-clave2-error" data-error-for="clave2" hidden></p>
+        </div>
+        <label class="check" for="ver-claves"><input type="checkbox" id="ver-claves"> Mostrar contraseñas</label>
+        <button type="submit" class="btn primario">Crear cuenta</button>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer class="pie"><p>RutaU es un prototipo académico de Interacción Humano-Computadora. Los horarios son simulados.</p></footer>
+
+<script src="js/a11y.js" defer></script>
+<script src="js/api.js" defer></script>
+<script src="js/auth.js" defer></script>
+</body>
+</html>

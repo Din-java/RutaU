@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis reportes – RutaU</title>
+<meta name="description" content="Consulta y retira tus reportes del servicio.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<header class="encabezado">
+  <div class="encabezado-fila">
+    <a class="marca" href="dashboard.html"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 11h18M7 20v-3M17 20v-3"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></svg><span>RutaU</span></a>
+    <div class="herramientas" role="group" aria-label="Opciones de accesibilidad">
+      <button type="button" class="btn-herr" id="btn-texto" aria-pressed="false">Texto grande</button>
+      <button type="button" class="btn-herr" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Principal">
+    <ul>
+      <li><a href="dashboard.html">Panel</a></li>
+      <li><a href="rutas.html">Rutas</a></li>
+      <li><a href="reportar.html">Reportar</a></li>
+      <li><a href="mis-reportes.html" aria-current="page">Mis reportes</a></li>
+      <li><button type="button" data-salir>Cerrar sesión</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="principal" tabindex="-1">
+  <h1>Mis reportes</h1>
+  <p class="intro">Revisa los problemas que reportaste o retira los que ya no apliquen.</p>
+
+  <div class="filtros" role="group" aria-label="Filtrar reportes">
+    <button type="button" class="btn" id="f-activos" aria-pressed="true">Activos</button>
+    <button type="button" class="btn" id="f-retirados" aria-pressed="false">Retirados</button>
+  </div>
+
+  <p class="tarjeta" id="aviso" tabindex="-1" hidden></p>
+
+  <section aria-labelledby="titulo-lista">
+    <h2 id="titulo-lista" tabindex="-1">Reportes activos</h2>
+    <div id="lista"><p>Cargando…</p></div>
+  </section>
+
+  <dialog id="dialogo-retirar" aria-labelledby="dialogo-titulo" aria-describedby="dialogo-texto">
+    <h2 id="dialogo-titulo">¿Retirar este reporte?</h2>
+    <p id="dialogo-texto"></p>
+    <div class="acciones">
+      <button type="button" class="btn peligro solido" id="confirmar-retirar">Sí, retirar reporte</button>
+      <button type="button" class="btn" id="conservar">Conservar reporte</button>
+    </div>
+  </dialog>
+</main>
+
+<footer class="pie"><p>RutaU es un prototipo académico de Interacción Humano-Computadora. Los horarios son simulados.</p></footer>
+
+<script src="js/a11y.js" defer></script>
+<script src="js/api.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/mis-reportes.js" defer></script>
+</body>
+</html>

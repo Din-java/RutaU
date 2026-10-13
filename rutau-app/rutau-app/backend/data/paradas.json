@@ -1,0 +1,14 @@
+[
+  { "id": "ingenieria", "nombre": "Facultad de Ingeniería" },
+  { "id": "biblioteca", "nombre": "Biblioteca Central" },
+  { "id": "estadio", "nombre": "Estadio" },
+  { "id": "avuni", "nombre": "Av. Universidad" },
+  { "id": "centro", "nombre": "Centro" },
+  { "id": "residencias", "nombre": "Residencias" },
+  { "id": "plaza", "nombre": "Plaza Comercial" },
+  { "id": "cafeteria", "nombre": "Cafetería" },
+  { "id": "metro", "nombre": "Estación Metro" },
+  { "id": "ciencias", "nombre": "Facultad de Ciencias" },
+  { "id": "gimnasio", "nombre": "Gimnasio" },
+  { "id": "sur", "nombre": "Campus Sur" }
+]

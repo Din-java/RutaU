@@ -1,0 +1,8 @@
+[
+  { "id": "norte", "codigo": "N", "nombre": "Campus Norte – Centro", "frecuencia": 15, "desfase": 5,
+    "paradas": ["ingenieria", "biblioteca", "estadio", "avuni", "centro"] },
+  { "id": "resid", "codigo": "R", "nombre": "Residencias – Campus", "frecuencia": 20, "desfase": 10,
+    "paradas": ["residencias", "plaza", "biblioteca", "cafeteria", "ingenieria"] },
+  { "id": "sur", "codigo": "S", "nombre": "Metro – Campus Sur", "frecuencia": 12, "desfase": 3,
+    "paradas": ["metro", "avuni", "ciencias", "gimnasio", "sur"] }
+]

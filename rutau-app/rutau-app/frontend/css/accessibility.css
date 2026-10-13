@@ -1,0 +1,84 @@
+/* Accesibilidad (WCAG 2.2 AA): foco, saltar al contenido, texto grande, alto contraste y preferencias del sistema */
+
+/* Foco visible en todo elemento interactivo (2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.encabezado :focus-visible { outline-color: #14211f; }
+.chip input:focus-visible + span { outline: 3px solid var(--foco); outline-offset: 3px; }
+[tabindex="-1"]:focus { outline: none; }
+.resumen-errores:focus-visible, fieldset:focus-visible { outline: 3px solid var(--foco); }
+
+/* Enlace "Saltar al contenido" (2.4.1) */
+.saltar {
+  position: absolute;
+  left: .5rem;
+  top: -5rem;
+  z-index: 100;
+  padding: .7rem 1rem;
+  background: #10212b;
+  color: #ffffff;
+  border-radius: var(--radio);
+  font-weight: 700;
+}
+.saltar:focus { top: .5rem; }
+
+/* Texto solo para lectores de pantalla */
+.solo-lector {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Texto grande (1.4.4): el usuario lo activa con el botón del encabezado */
+:root[data-texto="grande"] { font-size: 125%; }
+
+/* Alto contraste (1.4.3 / 1.4.11): se activa con el botón o con la preferencia del sistema */
+:root[data-contraste="alto"] {
+  --fondo: #000000;
+  --superficie: #000000;
+  --tinta: #ffffff;
+  --tenue: #ffffff;
+  --linea: #ffffff;
+  --borde-campo: #ffffff;
+  --primario: #ffd400;
+  --sobre-primario: #000000;
+  --primario-suave: #1f1f1f;
+  --enlace: #8fc2ff;
+  --encabezado: #000000;
+  --sobre-encabezado: #ffffff;
+  --encabezado-linea: #ffffff;
+  --bus: #ffd400;
+  --error: #ff9aa2;
+  --error-fondo: #000000;
+  --ok: #7dff9f;
+  --ok-fondo: #000000;
+  --foco: #ffd400;
+}
+:root[data-contraste="alto"] .encabezado { border-bottom: 3px solid #ffffff; }
+:root[data-contraste="alto"] .btn.primario:hover { background: #ffffff; }
+:root[data-contraste="alto"] .btn.peligro.solido { background: #ff9aa2; color: #000000; }
+:root[data-contraste="alto"] .btn-herr[aria-pressed="true"] { background: #ffffff; color: #000000; }
+:root[data-contraste="alto"] .encabezado :focus-visible { outline-color: #ffd400; }
+:root[data-contraste="alto"] .tag, :root[data-contraste="alto"] .btn[aria-pressed="true"] { background: #ffd400; color: #000000; }
+:root[data-contraste="alto"] .estado-bus { background: #000000; border: 2px solid #ffffff; }
+:root[data-contraste="alto"] .opcion:has(input:checked) { background: #ffd400; color: #000000; }
+
+/* Preferencia del sistema: menos movimiento (2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Modo de colores forzados de Windows */
+@media (forced-colors: active) {
+  .chip input:checked + span { outline: 3px solid Highlight; }
+  .estado, .btn, .btn-herr { border: 2px solid ButtonText; }
+}

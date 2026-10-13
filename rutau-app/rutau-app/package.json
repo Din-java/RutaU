@@ -1,0 +1,9 @@
+{
+  "name": "rutau",
+  "version": "1.0.0",
+  "description": "RutaU: transporte universitario (Práctica 3.3 de Interacción Humano-Computadora)",
+  "scripts": { "start": "node backend/server.js" },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED",
+  "private": true
+}
